@@ -170,3 +170,21 @@ export const gallery = [
     image: images.japan,
   },
 ];
+
+export const tabs = [
+  {
+    name: 'index',
+    title: 'Home',
+    icon: icons.home,
+  },
+  {
+    name: 'explore',
+    title: 'Explore',
+    icon: icons.search,
+  },
+  {
+    name: 'profile',
+    title: 'Profile',
+    icon: icons.person,
+  },
+];

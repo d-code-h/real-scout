@@ -1,5 +1,3 @@
-import { ImageSourcePropType } from 'react-native';
-
 export interface CardProps {
   _id: string;
   title: string;
@@ -7,5 +5,5 @@ export interface CardProps {
   price: string;
   rating: number;
   category: string;
-  image: ImageSourcePropType;
+  image: string;
 }

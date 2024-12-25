@@ -12,11 +12,11 @@ const Search = () => {
 
   const debouncedSearch = useDebouncedCallback(
     (text: string) => router.setParams({ query: text }),
-    500,
+    2000,
   );
 
   const handleSearch = (text: string) => {
-    // setSearch(text);
+    setSearch(text);
     debouncedSearch(text);
   };
   return (

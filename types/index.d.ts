@@ -1,15 +1,5 @@
 import { ImageSourcePropType } from 'react-native';
 
-export interface CardProps {
-  _id: string;
-  title: string;
-  location: string;
-  price: string;
-  rating: number;
-  category: string;
-  image: ImageSourcePropType;
-}
-
 export interface TabIconProps {
   focused: boolean;
   icon: ImageSourcePropType;
@@ -41,7 +31,7 @@ interface UseAppwriteReturn<T, P> {
   data: T | null;
   loading: boolean;
   error: string | null;
-  refetch: (newParams: P) => Promise<void>;
+  refetch: (newParams?: P) => Promise<void>;
 }
 
 interface SettingsItemProps {

@@ -20,9 +20,7 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
   const isLogged = !!user;
 
   return (
-    // Wrap the app with the context
     <GlobalContext.Provider value={{ isLogged, user, loading, refetch }}>
-      {/* Render children components */}
       {children}
     </GlobalContext.Provider>
   );

@@ -1,10 +1,11 @@
 import { useGlobalContext } from '@/app/lib/global-provider';
+import { getGreeting } from '@/app/lib/util';
 import { Card, FeaturedCard } from '@/components/Card';
 import Filters from '@/components/Filters';
 import NoResults from '@/components/NoResults';
+import Search from '@/components/Search';
 import { cards, featuredCards } from '@/constants/data';
 import icons from '@/constants/icons';
-import images from '@/constants/images';
 import { router, useLocalSearchParams } from 'expo-router';
 import React, { useEffect, useState } from 'react';
 import {
@@ -63,13 +64,15 @@ const Home = () => {
             <View className="flex flex-row items-center justify-between mt-5">
               <View className="flex flex-row">
                 <Image
-                  source={images.avatar}
+                  source={{
+                    uri: user?.avatar,
+                  }}
                   className="size-12 rounded-full"
                 />
 
                 <View className="flex flex-col items-start ml-2 justify-center">
                   <Text className="text-xs font-rubik text-black-100">
-                    Good morning
+                    Good {getGreeting()}
                   </Text>
                   <Text className="text-base font-rubik-medium text-black-300">
                     {user?.name}
@@ -78,7 +81,8 @@ const Home = () => {
               </View>
               <Image source={icons.bell} className="size-6" />
             </View>
-            {/* Search */}
+            {/* Search Functionality */}
+            <Search />
 
             {/* Features */}
             <View className="my-5">

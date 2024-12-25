@@ -13,8 +13,8 @@ export default function Filters() {
   const handleCategoryPress = (category: string) => {
     // Set selected category and update URL params
     if (selectedCategory === category) {
-      setSelectedCategory('');
-      router.setParams({ filter: '' });
+      setSelectedCategory('All');
+      router.setParams({ filter: 'All' });
       return;
     }
     setSelectedCategory(category);

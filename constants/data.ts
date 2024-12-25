@@ -1,6 +1,7 @@
 import { CardProps } from '@/types/index';
 import icons from './icons';
 import images from './images';
+import { ImageSourcePropType } from 'react-native';
 
 export const cards = [
   {
@@ -77,35 +78,35 @@ export const categories = [
 export const settings = [
   {
     title: 'My Bookings',
-    icon: icons.calendar,
+    icon: icons.calendar as ImageSourcePropType,
   },
   {
     title: 'Payments',
-    icon: icons.wallet,
+    icon: icons.wallet as ImageSourcePropType,
   },
   {
     title: 'Profile',
-    icon: icons.person,
+    icon: icons.person as ImageSourcePropType,
   },
   {
     title: 'Notifications',
-    icon: icons.bell,
+    icon: icons.bell as ImageSourcePropType,
   },
   {
     title: 'Security',
-    icon: icons.shield,
+    icon: icons.shield as ImageSourcePropType,
   },
   {
     title: 'Language',
-    icon: icons.language,
+    icon: icons.language as ImageSourcePropType,
   },
   {
     title: 'Help Center',
-    icon: icons.info,
+    icon: icons.info as ImageSourcePropType,
   },
   {
     title: 'Invite Friends',
-    icon: icons.people,
+    icon: icons.people as ImageSourcePropType,
   },
 ];
 

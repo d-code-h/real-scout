@@ -1,16 +1,10 @@
 import { tabs } from '@/constants/data';
+import { TabIconProps } from '@/types';
 import { Tabs } from 'expo-router';
-import { View, Text, Image, ImageSourcePropType } from 'react-native';
+import { View, Text, Image } from 'react-native';
 
-const TabIcon = ({
-  focused,
-  icon,
-  title,
-}: {
-  focused: boolean;
-  icon: ImageSourcePropType;
-  title: string;
-}) => (
+const TabIcon = ({ focused, icon, title }: TabIconProps) => (
+  // Render Tab with an icon and tab title
   <View className="flex-2 mt-3 flex flex-col items-center">
     <Image
       source={icon}
@@ -54,11 +48,7 @@ const TabLayout = () => {
             title: tab.title,
             headerShown: false,
             tabBarIcon: ({ focused }) => (
-              <TabIcon
-                focused={focused}
-                icon={tab.icon as ImageSourcePropType}
-                title={tab.title}
-              />
+              <TabIcon focused={focused} icon={tab.icon} title={tab.title} />
             ),
           }}
         />

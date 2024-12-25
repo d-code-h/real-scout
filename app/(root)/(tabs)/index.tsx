@@ -1,3 +1,4 @@
+import { useGlobalContext } from '@/app/lib/global-provider';
 import { Card, FeaturedCard } from '@/components/Card';
 import Filters from '@/components/Filters';
 import NoResults from '@/components/NoResults';
@@ -14,12 +15,13 @@ import {
   Image,
   Text,
   TouchableOpacity,
-  ImageSourcePropType,
 } from 'react-native';
 
 const Home = () => {
   const params = useLocalSearchParams<{ query?: string; filter?: string }>();
   const [filteredCards, setFilteredCards] = useState([...cards]);
+  const { user } = useGlobalContext();
+
   // Route to click card details
   const handleCardPress = (id: string) => {
     router.push(`/properties/${id}`);
@@ -61,7 +63,7 @@ const Home = () => {
             <View className="flex flex-row items-center justify-between mt-5">
               <View className="flex flex-row">
                 <Image
-                  source={images.avatar as ImageSourcePropType}
+                  source={images.avatar}
                   className="size-12 rounded-full"
                 />
 
@@ -70,14 +72,11 @@ const Home = () => {
                     Good morning
                   </Text>
                   <Text className="text-base font-rubik-medium text-black-300">
-                    David
+                    {user?.name}
                   </Text>
                 </View>
               </View>
-              <Image
-                source={icons.bell as ImageSourcePropType}
-                className="size-6"
-              />
+              <Image source={icons.bell} className="size-6" />
             </View>
             {/* Search */}
 

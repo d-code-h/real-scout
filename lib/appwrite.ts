@@ -8,19 +8,31 @@ import {
 } from 'react-native-appwrite';
 import * as Linking from 'expo-linking';
 import { openAuthSessionAsync } from 'expo-web-browser';
+import Constants from 'expo-constants';
+import { AppConfig } from '@/types';
 
 // Set the platform, endpoint, and project ID
+const {
+  APPWRITE_PROJECT_ID,
+  APPWRITE_PLATFORM,
+  APPWRITE_ENDPOINT,
+  APPWRITE_DATABASE_ID,
+  APPWRITE_AGENTS_COLLECTION_ID,
+  APPWRITE_GALLERIES_COLLECTION_ID,
+  APPWRITE_REVIEWS_COLLECTION_ID,
+  APPWRITE_PROPERTIES_COLLECTION_ID,
+} = Constants.expoConfig?.extra as AppConfig;
+
+// Configuration object for Appwrite integration, using environment variables.
 export const config = {
-  platform: process.env.EXPO_PUBLIC_APPWRITE_PLATFORM,
-  endpoint: process.env.EXPO_PUBLIC_APPWRITE_ENDPOINT,
-  projectId: process.env.EXPO_PUBLIC_APPWRITE_PROJECT_ID,
-  databaseId: process.env.EXPO_PUBLIC_APPWRITE_DATABASE_ID,
-  galleriesCollectionId:
-    process.env.EXPO_PUBLIC_APPWRITE_GALLERIES_COLLECTION_ID,
-  reviewsCollectionId: process.env.EXPO_PUBLIC_APPWRITE_REVIEWS_COLLECTION_ID,
-  agentsCollectionId: process.env.EXPO_PUBLIC_APPWRITE_AGENTS_COLLECTION_ID,
-  propertiesCollectionId:
-    process.env.EXPO_PUBLIC_APPWRITE_PROPERTIES_COLLECTION_ID,
+  platform: APPWRITE_PLATFORM,
+  endpoint: APPWRITE_ENDPOINT,
+  projectId: APPWRITE_PROJECT_ID,
+  databaseId: APPWRITE_DATABASE_ID,
+  galleriesCollectionId: APPWRITE_GALLERIES_COLLECTION_ID,
+  reviewsCollectionId: APPWRITE_REVIEWS_COLLECTION_ID,
+  agentsCollectionId: APPWRITE_AGENTS_COLLECTION_ID,
+  propertiesCollectionId: APPWRITE_PROPERTIES_COLLECTION_ID,
 };
 
 export const client = new Client();

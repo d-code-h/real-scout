@@ -1,5 +1,5 @@
-import { logout } from '@/app/lib/appwrite';
-import { useGlobalContext } from '@/app/lib/global-provider';
+import { logout } from '@/lib/appwrite';
+import { useGlobalContext } from '@/lib/global-provider';
 import { settings } from '@/constants/data';
 import icons from '@/constants/icons';
 import { SettingsItemProps } from '@/types';

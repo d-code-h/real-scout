@@ -1,6 +1,7 @@
-import { getProperties } from '@/app/lib/appwrite';
-import { useAppwrite } from '@/app/lib/useAppwrite';
+import { getProperties } from '@/lib/appwrite';
+import { useAppwrite } from '@/lib/useAppwrite';
 import { Card } from '@/components/Cards';
+import Filters from '@/components/Filters';
 import NoResults from '@/components/NoResults';
 import Search from '@/components/Search';
 import icons from '@/constants/icons';
@@ -99,6 +100,9 @@ const Explore = () => {
               <Image source={icons.bell} className="size-6" />
             </View>
             <Search />
+
+            {/* Set if filtering parameters */}
+            <Filters />
 
             <View className="mt-5">
               <Text className="text-xl font-rubik-bold text-black-300 mt-5">

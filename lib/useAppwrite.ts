@@ -44,7 +44,7 @@ export const useAppwrite = <T, P extends Record<string, string | number>>({
   }, []);
 
   // Refetch data function
-  const refetch = async (newParams: P) => await fetchData(newParams);
+  const refetch = async (newParams?: P) => await fetchData(newParams ?? params);
 
   // Return the states and refetch function
   return { data, loading, error, refetch };

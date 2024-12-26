@@ -105,22 +105,30 @@ export async function logout() {
 // Add a function to get user details
 export async function getUser() {
   try {
-    // Get the user details
-    const user = await account.get();
+    // First, check if the session exists and is valid
+    let user = null;
 
-    // Return the user details
-    if (user.$id) {
-      // Get the user avatar
+    try {
+      const session = await account.getSession('current'); // Try fetching the current session
+      if (session) {
+        user = await account.get(); // Fetch user details if session exists
+      }
+    } catch (error) {
+      // Session does not exist or expired
+      console.log('No active session found. Proceeding as guest...');
+    }
+
+    if (user && user.$id) {
+      // If user data is available, get the avatar
       const userAvatar = await avatar.getInitials(user.name);
-
-      // Return the user details with the avatar
       return { ...user, avatar: userAvatar.toString() };
     }
-  } catch (error) {
-    // Log the error
-    console.error(error);
 
-    // Return null if the user details are not found
+    // If no user found or not authenticated, return null
+    return null;
+  } catch (error) {
+    // Log and return null in case of any error
+    console.error('Error fetching user details:', error);
     return null;
   }
 }
@@ -180,5 +188,23 @@ export async function getProperties({
   } catch (error) {
     console.error(error);
     return [];
+  }
+}
+
+export async function getPropertyById({ id }: { id: string }) {
+  try {
+    // Fetch the property with the given id
+    const result = await databases.getDocument(
+      config.databaseId!,
+      config.propertiesCollectionId!,
+      id,
+    );
+
+    // Return property
+    return result;
+  } catch (error) {
+    // If error, console error and return null
+    console.log(error);
+    return null;
   }
 }

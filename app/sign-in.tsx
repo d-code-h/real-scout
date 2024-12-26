@@ -9,8 +9,8 @@ import {
   Alert,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { loginWithGoogle } from './lib/appwrite';
-import { useGlobalContext } from './lib/global-provider';
+import { loginWithGoogle } from '../lib/appwrite';
+import { useGlobalContext } from '../lib/global-provider';
 import { Redirect } from 'expo-router';
 
 const Auth = () => {

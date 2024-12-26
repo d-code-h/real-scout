@@ -1,7 +1,7 @@
-import { getLatestProperties, getProperties } from '@/app/lib/appwrite';
-import { useGlobalContext } from '@/app/lib/global-provider';
-import { useAppwrite } from '@/app/lib/useAppwrite';
-import { getGreeting } from '@/app/lib/util';
+import { getLatestProperties, getProperties } from '@/lib/appwrite';
+import { useGlobalContext } from '@/lib/global-provider';
+import { useAppwrite } from '@/lib/useAppwrite';
+import { getGreeting } from '@/lib/util';
 import { Card, FeaturedCard } from '@/components/Cards';
 import Filters from '@/components/Filters';
 import NoResults from '@/components/NoResults';
@@ -69,9 +69,6 @@ const Home = () => {
 
   return (
     <SafeAreaView className="h-full bg-white">
-      {/* Seed DB */}
-      {/* <Button title="Seed" onPress={seed} /> */}
-
       {/* Render cards using flatlist */}
       <FlatList
         data={properties || []}
@@ -106,7 +103,7 @@ const Home = () => {
 
                 <View className="flex flex-col items-start ml-2 justify-center">
                   <Text className="text-xs font-rubik text-black-100">
-                    Good {getGreeting()}
+                    {`Good ${getGreeting()}`}
                   </Text>
                   <Text className="text-base font-rubik-medium text-black-300">
                     {user?.name}
@@ -138,7 +135,6 @@ const Home = () => {
               ) : (
                 <FlatList
                   data={latestProperties || []}
-                  // data={latestProperties}
                   renderItem={({ item }) => (
                     <FeaturedCard
                       item={item}

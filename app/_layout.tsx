@@ -3,7 +3,7 @@ import '../global.css';
 import { useEffect } from 'react';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
-import GlobalProvider from './lib/global-provider';
+import GlobalProvider from '../lib/global-provider';
 
 export default function RootLayout() {
   // Load fonts
@@ -31,7 +31,7 @@ export default function RootLayout() {
   // Render the stack navigator with no headers
   return (
     <GlobalProvider>
-      <Stack screenOptions={{ headerShown: false }}></Stack>;
+      <Stack screenOptions={{ headerShown: false }}></Stack>
     </GlobalProvider>
   );
 }

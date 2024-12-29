@@ -10,6 +10,7 @@ import * as Linking from 'expo-linking';
 import { openAuthSessionAsync } from 'expo-web-browser';
 import Constants from 'expo-constants';
 import { AppConfig } from '@/types';
+import { makeRedirectUri } from 'expo-auth-session';
 
 // Set the platform, endpoint, and project ID
 const {
@@ -50,12 +51,19 @@ export const databases = new Databases(client);
 export async function loginWithGoogle() {
   try {
     // Create a redirect URI
-    const redirecturi = Linking.createURL('/');
+    // const redirectUri = 'restate:///';
+    const deepLink = new URL(Linking.createURL('/'));
+
+    if (!deepLink.hostname) {
+      deepLink.hostname = 'localhost';
+    }
+
+    const redirectUri = deepLink + '/';
 
     // Create an OAuth2 token
     const response = await account.createOAuth2Token(
       OAuthProvider.Google,
-      redirecturi,
+      redirectUri,
     );
 
     // Throw an error if the response is empty
@@ -64,11 +72,11 @@ export async function loginWithGoogle() {
     // Open the browser to authenticate the user
     const browserResult = await openAuthSessionAsync(
       response.toString(),
-      redirecturi,
+      redirectUri,
     );
 
     // Throw an error if the browser result is empty
-    if (browserResult.type !== 'success') throw new Error('Failed to login');
+    if (browserResult.type !== 'success') throw new Error('Failedy to login');
 
     // Parse the URL
     const url = new URL(browserResult.url);

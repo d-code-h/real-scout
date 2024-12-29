@@ -8,7 +8,7 @@ const TabIcon = ({ focused, icon, title }: TabIconProps) => (
   <View className="flex-2 mt-3 flex flex-col items-center">
     <Image
       source={icon}
-      tintColor={focused ? '#0061FF' : '#666876'}
+      tintColor={focused ? '#8B5DFF' : '#666876'}
       resizeMode="contain"
       className="size-6"
     />
@@ -33,7 +33,7 @@ const TabLayout = () => {
         tabBarStyle: {
           backgroundColor: 'white',
           position: 'absolute',
-          borderTopColor: '#0061FF1A',
+          borderTopColor: '#8B5DFF1A',
           borderTopWidth: 1,
           minHeight: 70,
         },

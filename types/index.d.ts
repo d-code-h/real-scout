@@ -9,6 +9,7 @@ interface AppConfig {
   APPWRITE_GALLERIES_COLLECTION_ID: string;
   APPWRITE_REVIEWS_COLLECTION_ID: string;
   APPWRITE_PROPERTIES_COLLECTION_ID: string;
+  APPWRITE_REDIRECT_URI: string;
 }
 
 export interface TabIconProps {

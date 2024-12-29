@@ -1,7 +1,7 @@
 import 'dotenv/config';
 
 export default {
-  name: 'real-scout-native',
+  name: 'Real Scout',
   slug: 'real-scout',
   version: '1.0.0',
   orientation: 'portrait',
@@ -29,7 +29,7 @@ export default {
     [
       'expo-splash-screen',
       {
-        image: './assets/images/splash-icon.png',
+        image: './assets/images/splash.png',
         resizeMode: 'cover',
         backgroundColor: '#ffffff',
       },

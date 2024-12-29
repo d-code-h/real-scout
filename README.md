@@ -66,7 +66,7 @@ APPWRITE_PROPERTIES_COLLECTION_ID='your-appwrite-properties-collection-id'
 
 ### 📱 Live App (APK)
 
-Download the apk app [here](https://drive.google.com/file/d/16vUwOoiz7CdWT7AyB6ly-aqGHkaKDjXW/view?usp=sharing)
+Download the apk app [here](https://drive.google.com/file/d/1x_xMw_PoPhOhv0H78OQi8PSUozqzJ5u8/view?usp=drive_link)
 
 ## ![MIT License](https://img.shields.io/badge/license-MIT-blue.svg) License
 

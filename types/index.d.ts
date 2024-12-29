@@ -1,5 +1,17 @@
 import { ImageSourcePropType } from 'react-native';
 
+interface AppConfig {
+  APPWRITE_PROJECT_ID: string;
+  APPWRITE_PLATFORM: string;
+  APPWRITE_ENDPOINT: string;
+  APPWRITE_DATABASE_ID: string;
+  APPWRITE_AGENTS_COLLECTION_ID: string;
+  APPWRITE_GALLERIES_COLLECTION_ID: string;
+  APPWRITE_REVIEWS_COLLECTION_ID: string;
+  APPWRITE_PROPERTIES_COLLECTION_ID: string;
+  APPWRITE_REDIRECT_URI: string;
+}
+
 export interface TabIconProps {
   focused: boolean;
   icon: ImageSourcePropType;

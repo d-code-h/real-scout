@@ -36,7 +36,7 @@ const Comments = ({ items }: { items: Models.Document[] }) => {
               <Image
                 source={icons.heart}
                 className="size-5"
-                tintColor={'#0061FF'}
+                tintColor={'#8B5DFF'}
               />
               {/* Like number */}
               <Text className="text-black-300 text-sm font-rubik-medium ml-2">

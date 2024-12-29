@@ -1,50 +1,73 @@
-# Welcome to your Expo app 👋
+# Real Scout 🏡
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Build a **full-stack Real Estate application** with **React Native**, featuring **Google authentication**, **dynamic property listings**, and **user profiles**. Designed with modern tools like **Expo SDK 52**, **Appwrite**, **Tailwind CSS**, and **TypeScript** for a seamless and scalable experience. 🚀
 
-## Get started
+![Real Estate](/assets/images/realestate.png)
 
-1. Install dependencies
+## Features ✨
 
-   ```bash
-   npm install
-   ```
+- **Google Authentication**: Easily sign up and log in using Google accounts.
+- **Dynamic Property Listings**: Browse and filter available real estate properties.
+- **User Profiles**: Manage user profiles and saved properties.
+- **Real-time Database with Appwrite**: Sync user data and property listings in real-time.
+- **Responsive Design with Tailwind CSS**: A beautiful, responsive UI that works on mobile and web.
+- **Built with Expo SDK**: Fast development with Expo and TypeScript for a seamless experience.
 
-2. Start the app
+## Tech Stack ⚙️
 
-   ```bash
-    npx expo start
-   ```
+- **Frontend**: React Native, Expo, Tailwind CSS, TypeScript
+- **Backend**: Appwrite (Database, Authentication)
+- **Authentication**: Google OAuth via Expo Auth Session
+- **State Management**: React Context API
+- **Navigation**: React Navigation (Bottom Tabs, Stacks)
+- **UI Styling**: NativeWind (Tailwind for React Native)
 
-In the output, you'll find options to open the app in a
+## Prerequisites 🛠
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+Before you start, make sure you have the following installed:
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+- **Bun** (for package management and script running)
+- **Node.js** (version 18 or higher)
+- **Expo CLI** (for running the Expo app)
+- **Appwrite** account (for backend)
 
-## Get a fresh project
+## Getting Started 🚀
 
-When you're ready, run:
+### 1. Clone the repository
 
 ```bash
-npm run reset-project
+git clone https://github.com/d-code-h/real-scout.git
+cd real-scout
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### 2. Install dependencies
 
-## Learn more
+This project uses Bun, you can install all dependencies with:
+`bun install`
 
-To learn more about developing your project with Expo, look at the following resources:
+### 3. Set up environment variables
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+Create a .env file in the root directory and add your Appwrite and Google OAuth credentials:
 
-## Join the community
+```
+APPWRITE_PROJECT_ID='your-appwrite-id'
+APPWRITE_PLATFORM='your-appwrite-platform'
+APPWRITE_ENDPOINT='your-appwrite-endpoint'
+APPWRITE_DATABASE_ID='your-appwrite-database-id'
+APPWRITE_AGENTS_COLLECTION_ID='your-appwrite-agents-collection-id'
+APPWRITE_GALLERIES_COLLECTION_ID='your-appwrite-galleries-collection-id'
+APPWRITE_REVIEWS_COLLECTION_ID='your-appwrite-reviews-collection-id'
+APPWRITE_PROPERTIES_COLLECTION_ID='your-appwrite-properties-collection-id'
+```
 
-Join our community of developers creating universal apps.
+### 4. Run the app in development
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+`bun start` or `bunx expo start`
+
+### 📱 Live App (APK)
+
+Download the apk app [here](https://drive.google.com/file/d/1x_xMw_PoPhOhv0H78OQi8PSUozqzJ5u8/view?usp=drive_link)
+
+## ![MIT License](https://img.shields.io/badge/license-MIT-blue.svg) License
+
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
